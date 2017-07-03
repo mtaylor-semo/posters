@@ -1,0 +1,167 @@
+% This style was created by Philippe Dreuw and Thomas Deselaers
+% Modified by Michael S. Taylor, June 2017
+\ProvidesPackage{beamerthemeSEMO} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\RequirePackage{semo_colors}
+\RequirePackage{amsmath,amssymb}
+\usepackage{ragged2e}
+\selectcolormodel{cmyk}
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Colors are based on the SEMO brand:
+%http://www.semo.edu/communications-marketing/brand.html
+
+% However, the cmyk values given on that page do NOT 
+% agree with the hexidecimal and RGB values. I used the
+% cmyk colors from Photoshop after entering in either
+% the RGB or hexadecimal values.
+
+% Core Palette
+%\definecolor{semo_red}{RGB}{200, 16, 46}		% #c8102e
+%\definecolor{semo_red}{cmyk}{.02,1,.85,.06}	% #c8102e
+\definecolor{semo_red}{cmyk}{.15,1,.91,.05}		% #c8102e
+\definecolor{rich_black}{cmyk}{.4,.4,.4,1}		% #c8102e
+
+% Secondary Palette
+\definecolor{river}{cmyk}{1,.98,.26,.18}		% #151F6D
+\definecolor{cardiac}{cmyk}{.26,.98,.77,.21}	% #9D2235
+
+% Accent Palette
+\definecolor{fountain}{cmyk}{.51,.05,.03,0}		% #71C5E8
+\definecolor{terrace}{cmyk}{.79,.19,.53,.02}	% #279989
+%\definecolor{}{cmyk}{}
+
+
+\setbeamercolor{headline}{fg=semo_red,bg=white}
+\setbeamercolor{footline}{fg=semo_red, bg=white}
+\setbeamerfont{footline}{size=\large}
+\setbeamercolor{separation line}{bg=semo_red}
+\setbeamercolor{title in headline}{fg=semo_red}
+\setbeamercolor{author in headline}{fg=rich_black}
+\setbeamercolor{institute in headline}{fg=rich_black}
+
+\setbeamercolor{framesubtitle}{fg=white, bg=semo_red}
+\setbeamercolor{author in head/foot}{fg=semo_red, bg=white}
+\setbeamercolor{title in head/foot}{fg=white, bg=white}
+
+\setbeamercolor*{normal text}{fg=rich_black, bg=white}
+\setbeamercolor*{block body}{fg=rich_black, bg=white}
+\setbeamercolor*{block title}{fg=white,bg=river}
+\setbeamerfont{block title}{size=\large,series=\bf, shape=\sc}
+\setbeamercolor{upper separation line head}{fg=semo_red}
+
+\setbeamercolor*{example body}{fg=rich_black,bg=white}
+\setbeamercolor*{example text}{fg=rich_black,bg=white}
+\setbeamercolor*{example title}{bg=river,fg=white}
+
+\setbeamercolor{alerted text}{fg=semo_red}
+
+\setbeamercolor{structure}{fg=semo_red}
+
+\setbeamertemplate{itemize items}[triangle]
+
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+	\vskip.75ex
+	\begin{beamercolorbox}[rounded=true,dp={1ex},colsep*=0ex]{block title}%
+		\usebeamerfont*{block title}\vfill\hskip1ex\insertblocktitle
+	\end{beamercolorbox}%
+
+	{\ifbeamercolorempty[bg]{block body}{}{}}%
+	
+	\usebeamerfont{block body}%
+	
+	\begin{beamercolorbox}[rounded=true,colsep*=0ex,vmode]{block body}%
+		\justifying\ifbeamercolorempty[bg]{block body}{}{}\vbox{}%
+} %end block begin
+
+	\setbeamertemplate{block end}{
+	\end{beamercolorbox}
+} %end block end
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{  
+\leavevmode
+
+\begin{beamercolorbox}[wd=\paperwidth]{headline}
+	\begin{columns}[t]
+
+		\begin{column}{\sepwid} 
+		\end{column}
+	
+		\begin{column}{\threecolwid}
+			\vskip5ex
+			\raggedleft
+			\usebeamercolor{title in headline} {\color{fg}\textbf{\huge{\inserttitle}}\vskip3ex}%\\[6ex]}
+        
+			\usebeamercolor{author in headline} {\color{fg}\LARGE{\scshape\insertauthor}\\[1ex]}
+        
+			\usebeamercolor{institute in headline} {\color{fg}\Large{\insertinstitute}}%\\[1ex]}  
+           
+		\end{column}
+
+%		\begin{column}{\sepwid}
+%		\end{column}
+
+		\begin{column}{\onecolwid}
+			\vskip0.5cm
+			\begin{center}
+				\includegraphics[width=.8\linewidth]{semo_logo_red_black}
+			\end{center}
+			\vskip1.5cm
+		\end{column}
+		\begin{column}{\sepwid}
+		\end{column}
+	\end{columns}
+\end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+  
+  \leavevmode%
+  \begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{author in head/foot}%
+    http://biology.semo.edu
+    \hfill
+    mtaylor@semo.edu
+    \hfill
+    http://github.com/mtaylor-semo/
+    \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display a grid to help align images ... and it looks nice with this color scheme
+%\beamertemplategridbackground[1cm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<all>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-master: "poster"
+%%% End: 
