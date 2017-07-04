@@ -16,10 +16,12 @@
 \usepackage{microtype}
 
 \usepackage{unicode-math}
+%\setmathfont[Scale=MatchLowercase]{Tex Gyre Pagella Math}
 %\setmathfont[Scale=MatchLowercase]{Asana Math}
 %\setmathfont[Scale=MatchLowercase]{XITS Math}
 
-\usepackage[absolute,overlay]{textpos}
+%\usepackage[absolute,overlay]{textpos}
+
 
 \usepackage{natbib}
 %\setlength{\leftmargini}{0.9em}
@@ -71,13 +73,14 @@
 \begin{columns}[t]
 	\begin{column}{\sepwid} % Left spacer
 	\end{column}
+
 	\begin{column}{\onecolwid}
     	\begin{block}{Introduction}
     		\textsc{Quantitative reasoning} is a skill that must be mastered by biology students before they graduate \citetext{\citetalias{national2003bio2010}; \citetalias{american2011vision}; \citealp{hurney2011closing}}. Yet, experience suggests that biology students do not always see the need for this skill (“I just want to work with plants.”) or fear analytical problems (“I am not good at math.”). Student aversion to quantitative analysis poses pedagogical problems for teaching the process of science.
     		
     		\whitespace
 
-			To address these problems, some biology faculty at Southeast have coordinated their courses to teach skills early that are built upon later. For example, the first  biology course for majors uses Microsoft Excel extensively to teach fundamental graphing and math functions that students use for data analysis. Later courses require students to employ those early skills and to learn more advanced skills. Some courses introduce new software for simulation and analysis. Here, I highlight exercises from three courses that span the curriculum of a typical organismal biology student at Southeast.  
+			To address these problems, some biology faculty at Southeast have coordinated to teach skills that are built upon across the curriculum. For example, the first  biology course for majors uses Microsoft Excel extensively to teach fundamental graphing and math functions for data analysis. Later courses require students to employ those early skills and to learn more advanced skills and new software such as R for simulations and analyses.  \textcolor{cardiac}{Here, I feature exercises from three courses that span the curriculum of a typical organismal biology student at Southeast.}  
     	\end{block}
 
 		\vspace*{\sepwid}
@@ -89,43 +92,50 @@
 			{\small \bibliography{modeling_workshop}}
 		\end{block}
 
-		\vspace*{0.5\sepwid}
-		
-		\textcolor{river}{\textbf{\textsc{Colophon}}}
-		
+		\vspace*{0.35\sepwid}
+
+		Special thanks to Jenn Weber and Rebecka Brasso, Southeast Missouri State University.		
+%		\textcolor{river}{\textbf{\textsc{Colophon}}}
+
+		\vspace*{0.35\sepwid}
+
 			{\justifying\small This poster was typeset with \LaTeX{} and the beamerposter package by Philippe Dreuw and Thomas Deselaers. The font is Linux Biolinum O produced by LinuxLibertine.org. The poster and template are available from mtaylor-semo on github.com  (\textsc{cc by-sa 4.0}).}
-		
 
 	\end{column}
+
 	\begin{column}{\sepwid}
+
 	\end{column}
 	\begin{column}{\onecolwid}
 	    \begin{block}{Year 1: Evolution and Ecology}
-    	   	\textsc{Evolution and Ecology} is a new lecture and laboratory course for freshmen biology majors. The lab exercises help students develop skills with Microsoft Excel and emphasize graphical analyses of data.
+    	   	\textsc{Evolution and Ecology} is a new lecture and laboratory course for freshmen majors. The lab emphasizes course concepts via quantitative exercises. Specifically, students learn how to use  Excel for basic calculations and graphical analyses of real and simulated data.
 			
 			\whitespace
 			
-			\textsc{Hardy-Weinberg Equilibrium}
+			\textcolor{cardiac}{\textsc{Hardy-Weinberg Equilibrium}}
 			
-			Students use two equations to model allele and genotype frequencies in a population of organisms. The equation for the allele frequencies is
+			Students use two equations to model allele and genotype frequencies in a population. The equation for the frequencies of two alleles $\left(p \text{ and } q\right)$ is
 			
 			\begin{equation*}
 				p + q = 1,
 			\end{equation*}
 			
-			where $p$ and $q$ are the frequencies of two alleles. The formula for the three possible genotypes is
+		 	and the equation for the three possible genotypes is
 			
 			\begin{equation*}
 				p^2 + 2pq + q^2 = 1.
 			\end{equation*}
 						
-			Students build formulas in Excel to generate values for the five variables from $p = 0.01$ to $1.0$, and then plot the three genotype frequencies against the $p$ allele frequency. The graph is a visual representation of \textit{expected} genotype frequencies for a population in Hardy-Weinberg equilibrium.
-						
-			\whitespace
-
-			\includegraphics[width=\textwidth]{hwe_graph}
+			Students build formulas in Excel to generate values for the five variables from $p = 0.01$ to $1.0$ and plot the three genotype frequencies (Fig.~\ref{fig:hwe}).
 			
-			\whitespace
+			\vspace*{0.5\baselineskip}
+			
+			\begin{figure}
+				\includegraphics[width=\textwidth]{hwe_graph}
+				\caption{Expected genotype frequencies for the \textit{p} allele frequency for a population in Hardy-Weinberg equilibrium.\label{fig:hwe}}
+			\end{figure}
+			
+			\vspace*{\baselineskip}
 			
 			Students next apply “beanbag” biology \citep{jungck2010mathematical} by sampling “alleles” from a “population” with known allele frequencies, and then apply a $\chi^2$ test to compare observed to expected genotype frequencies. Students also explore how migration and natural selection affect allele frequencies in a population.
 			
@@ -147,36 +157,32 @@
 
 	\begin{column}{\onecolwid}
     	\begin{block}{Years 2–3: Evolutionary Biology}
-       		\textsc{Introduction to Evolutionary Biology} is taken by sophomores and juniors. The course is now lecture-only but is being redesigned to include a once-per-week lab that requires to students to reinforce lecture concepts by analysis of real data.
+       		\textsc{Introduction to Evolutionary Biology} is taken by sophomores and juniors. The course now is lecture-only but is being redesigned to include a once-per-week lab that reinforces lecture concepts through analyses of real-world data.
        		
        		\whitespace
        		
-       		\textsc{Population Genetics} 
+       		\textcolor{cardiac}{\textsc{Population Genetics}}
        		
        		Students use PopG software \citep{Felsenstein2016:popg} to simulate allele frequencies in a population subject to different evolutionary scenarios such as natural selection and genetic drift. With PopG, students change population size, strength of selection, and migration and mutation rates to learn how these affect allele frequencies over time.
        		
        		\whitespace
        		
-       		In one exercise, students explore the interaction between the strength of selection $\left(s\right)$ and the effective population size $\left(N_e\right)$:
+       		In one exercise, students explore the interaction between the strength of selection $\left(s\right)$ and the effective population size $\left(N_e\right)$. 
+       		If $2N_es \gg 1$ then selection has a better chance of overcoming drift to cause a beneficial mutation to become fixed in the population. In  simulations where $2N_es = 0$ and $2N_es = 2$, students see that drift has the greatest effect in the first scenario but a beneficial mutation in the second scenario has about a $4\times$ greater chance of becoming fixed in the population (Fig.~\ref{fig:simulation}). 
        		
-       		\begin{equation*}
-       		2N_es \approx 1.
-       		\end{equation*}
+       		\vspace*{0.5\baselineskip}
        		
-       		If $2N_es \gg 1$ then selection has a better chance of overcoming drift to cause a beneficial mutation to become fixed in the population. In a series of simulations where $2N_es = 0$ and $2N_es = 2$, students see that a beneficial allele has about a $4\times$ greater chance of becoming fixed in the population. The figure below shows the results of one simulation run on 100 populations of $N = 100$ each and $s = 0.01$.
-       		
-			\whitespace
-
+			\begin{figure}
 			\includegraphics[width=\textwidth]{ns_graph}
-
-			\whitespace
+			\caption{Simulation results for 100 populations with 100 individuals in each population and $s = 0.01$. The blue line represents a population without genetic drift.\label{fig:simulation}}
+			\end{figure}
+       		
+       		\vspace*{0.8\baselineskip}
        		
        		Representative questions from this exercise are
        		\begin{itemize}\justifying
        			
        			\item Predict how $N_e$ affects the probability of fixation for an allele under weak positive selection $\left(s = 0.01\right)$. Justify your predictions for populations of $N = 1000$ and $N = 10,000$.
-       			
-%       			\item Draw a graph that predicts the allele frequency change for starting $p = 0.005$, $N_e = 100$, and relative fitnesses of 1.0, 0.99 and 0.98 for the  \emph{AA}, \emph{Aa} and \emph{aa} genotypes.
        			
        			\item What should be the strength of selection in a population of $N_e = 1000$ to overcome the effects of genetic drift? If $N_e = 10,000$ or $50,000$? Show your work.
        		\end{itemize}
@@ -192,26 +198,22 @@
 			\textsc{Biogeography} is a senior and graduate level course. Students use the R Statistical Package \citep{R-Core-Team:2016aa} to analyze real-world data to discover and report biogeographic patterns.
 			
        		\whitespace
+       		
+			\textcolor{cardiac}{\textsc{Biogeographic Provinces}}
 
-			\textsc{Biogeographic Provinces} 
-
-			Students compare distribution patterns of freshwater fishes and crayfishes by performing a principal coordinates ordination (\textsc{pco}) for each taxonomic group. \textsc{Pco} groups watersheds based on shared species, as shown here for Georgia fishes.
+			Students compare distribution patterns of freshwater fishes and crayfishes by performing a principal coordinates ordination (\textsc{pco}) for each taxononic group. Watersheds with shared species occur together in ordinated space (Fig.~\ref{fig:pco}).
 		
-			\whitespace
-
-			\includegraphics[width=\textwidth]{fishes_pco}
-
-%			\whitespace
+			\begin{figure}
+				\includegraphics[width=0.94\textwidth]{fishes_pco}
+				\caption{First two axes from a \textsc{pco} of Georgia fishes. Colors indicate watersheds with a similar fauna.\label{fig:pco}}
+			\end{figure}
 			
-			Students then compare the similarities of the fish and crayfish ordinations with a Procrustes analysis. A significant result indicate that the watersheds have the same spatial relationship in each ordination, suggesting that fishes and crayfishes share a common biogeographic history. 
+			Students compare fish and crayfish ordinations with a Procrustes analysis. A significant result suggests that fishes and crayfishes share a common biogeographic history (Fig.~\ref{fig:procrustes}). 
 			
-			\whitespace
-			
-			\includegraphics[width=\textwidth]{procrustes}
-			
-			\whitespace
-			
-			%Groups of students perform these analyses on pairs of aquatic organisms (mussels, fishes, crayfishs) for different states, and then report their results to the class.
+			\begin{figure}
+				\includegraphics[width=0.94\textwidth]{procrustes}
+				\caption{Procrustes analysis of fish and crayfish \textsc{pco}s. The watersheds have a  similar spatial relationships.\label{fig:procrustes}}
+			\end{figure}
 			
 		\end{block}
 	\end{column}
